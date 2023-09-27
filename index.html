@@ -1,8 +1,25 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Document</title>
+</head>
 <body>
     <script type="text/javascript" id="cookiebanner"
-  src="https://cdn.jsdelivr.net/gh/dobarkod/cookie-banner@1.2.2/dist/cookiebanner.min.js"></script>
+    src="https://cdn.jsdelivr.net/gh/dobarkod/cookie-banner@1.2.2/dist/cookiebanner.min.js">
+        document.body.style.height = '200pt';
+        script['data-height']   = '20px';
+        script['data-position'] = 'top';
+        script['data-message']  = 'We use cookies!';
+        document.head.appendChild(script); 
+
+        script.onload = function()
+        {
+        console.log('loaded script');
+
+    // console.log( initCookieConsent );
+    }
+    console.log('ready');
+</script>
     
 </body>
 </html>
