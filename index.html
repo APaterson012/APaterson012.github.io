@@ -39,14 +39,20 @@
     data-message="We use cookies to improve your browsing experience.">
     </script>
 
-    <div id="map">
-        var map = L.map('map').setView([51.505, -0.09], 13);
-        
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
-
-    </div>
+    <div id="map" style="width: 600px; height: 400px;"></div>
+    <script>
+        // Initialize the map
+        var myMap = L.map('map').setView([51.505, -0.09], 13); // [latitude, longitude], zoom level
+    
+        // Add a base tile layer (you can choose a different tile provider)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(myMap);
+    
+        // Add a marker
+        var marker = L.marker([51.5, -0.09]).addTo(myMap)
+            .bindPopup('This is a marker!')
+            .openPopup();
+    </script>
 </body>
 </html>
