@@ -4,10 +4,31 @@
     <title>Document</title>
 </head>
 <body>
+    Here is one mermaid diagram:
+    <pre class="mermaid">
+            graph TD 
+            A[Client] --> B[Load Balancer] 
+            B --> C[Server1] 
+            B --> D[Server2]
+    </pre>
+
+    And here is another:
+    <pre class="mermaid">
+            graph TD 
+            A[Client] -->|tcp_123| B
+            B(Load Balancer) 
+            B -->|tcp_456| C[Server1] 
+            B -->|tcp_456| D[Server2]
+    </pre>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
     <script type="text/javascript" id="cookiebanner"
     src="https://cdn.jsdelivr.net/gh/dobarkod/cookie-banner@1.2.2/dist/cookiebanner.min.js"
-    data-height="40px" data-position="top"
+    data-height="20px" data-position="top"
     data-message="We use cookies to improve your browsing experience.">
-</script>
+    </script>
 </body>
 </html>
