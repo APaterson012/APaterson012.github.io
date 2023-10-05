@@ -10,18 +10,10 @@
             // Initialize the page content
             loadInitialContent();
 
-            // Attach click event handlers to the "Click me," "Map," and "Mermaid" links
-            $('#demo').click(function () {
-                loadGitHubContent();
-            });
-
-            $('#mapLink').click(function () {
-                loadMapContent();
-            });
-
-            $('#mermaidLink').click(function () {
-                loadMermaidContent();
-            });
+            // Attach click event handlers to the links
+            $('#demo').click(loadGitHubContent);
+            $('#mapLink').click(loadMapContent);
+            $('#mermaidLink').click(loadMermaidContent);
         });
 
         function loadInitialContent() {
@@ -29,10 +21,10 @@
             $('#data').html("Welcome to my project!");
         }
 
-        function loadGitHubContent() {
-            // Fetch content from the GitHub link using AJAX
+        function loadContentFromUrl(url) {
+            // Fetch content from the specified URL using AJAX
             $.ajax({
-                url: 'https://f28wp.github.io/material/tasks/Task%2008%20-%20AJAX%20&%20JSON.html',
+                url: url,
                 success: function (data) {
                     console.log(data);
                     // Replace the content of the 'data' element with the retrieved data
@@ -41,38 +33,29 @@
             });
         }
 
+        function loadGitHubContent() {
+            loadContentFromUrl('https://f28wp.github.io/material/tasks/Task%2008%20-%20AJAX%20&%20JSON.html');
+        }
+
         function loadMapContent() {
-            // Fetch content for the Map section (you can replace with your own map content)
-            $.ajax({
-                url: 'map.html',
-                success: function (data) {
-                    $('#data').html(data);
-                }
-            });
+            loadContentFromUrl('map.html');
         }
 
         function loadMermaidContent() {
-            // Fetch content for the Mermaid section (you can replace with your own mermaid content)
-            $.ajax({
-                url: 'mermaid.html',
-                success: function (data) {
-                    $('#data').html(data);
-                }
-            });
+            loadContentFromUrl('mermaid.html');
         }
     </script>
 </head>
 <body>
     <h1>HTML DOM Events</h1>
     <h2>The onclick Event</h2>
-    <p></p>
     <p id="demo">Ajax and Json page</p>
-    <span id="data"></span>
+    <div id="data"></div>
 
     <!-- Links to the Map and Mermaid sections -->
     <ul>
-        <li><a id="mapLink" href="map.html">Map Section</a></li>
-        <li><a id="mermaidLink" href="mermaid.html">Mermaid Section</a></li>
+        <li><a id="mapLink" href="#">Map Section</a></li>
+        <li><a id="mermaidLink" href="#">Mermaid Section</a></li>
     </ul>
 </body>
 </html>
