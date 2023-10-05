@@ -1,5 +1,40 @@
 <!DOCTYPE html>
 <html>
+    <title>My Github Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+     $(document).ready(function(){
+         // when ready, grab the html 
+         getContents();
+     });
+     function getContents(){
+         $.ajax({
+             url: 'https://f28wp.github.io/material/tasks/Task%2008%20-%20AJAX%20&%20JSON.html',
+             success: function(data) {
+                console.log(data);
+                 $('#data').html( data );
+             }
+         });
+     }
+    </script>
+
+<h1>HTML DOM Events</h1>
+<h2>The onclick Event</h2>
+
+<p>How to assign an "onclick" event to a p element:</p>
+
+<p id="demo" onclick="myFunction()">Click me.</p>
+
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+</script>
+
+
+    <span id="data"></span>   
 <head>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -53,28 +88,5 @@
             .bindPopup('This is a marker!')
             .openPopup();
     </script>
-
-<title>TODO supply a title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="http://code.jquery.com/jquery.js"></script>
-<script>
- $(document).ready(function(){
-     // when ready, grab the html 
-     getContents();
- });
- function getContents(){
-     $.ajax({
-         url: 'https://f28wp.github.io/material/tasks/Task%2008%20-%20AJAX%20&%20JSON.html',
-         success: function(data) {
-            console.log(data);
-             $('#data').html( data );
-         }
-     });
- }
-</script>
-
-
-<span id="data"></span>
 </body>
 </html>
