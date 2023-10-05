@@ -43,20 +43,30 @@
 
         function loadMapContent() {
             // Fetch content for the Map section (you can replace with your own map content)
-            $('#data').html("This is the Map section content.");
+            $.ajax({
+                url: 'map.html',
+                success: function (data) {
+                    $('#data').html(data);
+                }
+            });
         }
 
         function loadMermaidContent() {
             // Fetch content for the Mermaid section (you can replace with your own mermaid content)
-            $('#data').html("This is the Mermaid section content.");
+            $.ajax({
+                url: 'mermaid.html',
+                success: function (data) {
+                    $('#data').html(data);
+                }
+            });
         }
     </script>
 </head>
 <body>
     <h1>HTML DOM Events</h1>
     <h2>The onclick Event</h2>
-    <p>How to assign an "onclick" event to a p element:</p>
-    <p id="demo">Click me.</p>
+    <p></p>
+    <p id="demo">Ajax and Json page</p>
     <span id="data"></span>
 
     <!-- Links to the Map and Mermaid sections -->
