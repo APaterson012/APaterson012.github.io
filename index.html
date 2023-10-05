@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Project</title>
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <title>Alexander's GitHub Project</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
             // Initialize the page content
@@ -14,6 +14,11 @@
             $('#demo').click(loadGitHubContent);
             $('#mapLink').click(loadMapContent);
             $('#mermaidLink').click(loadMermaidContent);
+
+            // Attach click event handler to the button
+            $('button').click(function () {
+                loadGitHubCommits();
+            });
         });
 
         function loadInitialContent() {
@@ -44,11 +49,27 @@
         function loadMermaidContent() {
             loadContentFromUrl('mermaid.html');
         }
+
+        function loadGitHubCommits() {
+            // Load GitHub commits using AJAX and update the content
+            $("#divContent").load("https://api.github.com/repositories/2126244/commits?per_page=1");
+        }
     </script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #divContent {
+            font-size: 40px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
 </head>
 <body>
-    <title>Alexander's Github Project</title>
-    <p> Welcome </p>
+    <h1>HTML DOM Events</h1>
+    <h2>The onclick Event</h2>
     <p id="demo">Ajax and Json page</p>
     <div id="data"></div>
 
@@ -57,5 +78,13 @@
         <li><a id="mapLink" href="#">Map Section</a></li>
         <li><a id="mermaidLink" href="#">Mermaid Section</a></li>
     </ul>
+
+    <!-- Button to load GitHub commits -->
+    <button>Load GitHub Commits</button>
+
+    <!-- Content div for GitHub commits -->
+    <div id="divContent">
+        Default Content
+    </div>
 </body>
 </html>
