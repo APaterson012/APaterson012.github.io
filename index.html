@@ -1,92 +1,48 @@
 <!DOCTYPE html>
-<html>
-    <title>My Github Project</title>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://code.jquery.com/jquery.js"></script>
+    <title>My GitHub Project</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script>
-     $(document).ready(function(){
-         // when ready, grab the html 
-         getContents();
-     });
-     function getContents(){
-         $.ajax({
-             url: 'https://f28wp.github.io/material/tasks/Task%2008%20-%20AJAX%20&%20JSON.html',
-             success: function(data) {
-                console.log(data);
-                 $('#data').html( data );
-             }
-         });
-     }
+        $(document).ready(function () {
+            // Initialize the page content
+            loadInitialContent();
+
+            // Attach a click event handler to the "Click me" button
+            $('#demo').click(function () {
+                // Load GitHub content into the current page
+                loadGitHubContent();
+            });
+        });
+
+        function loadInitialContent() {
+            // Load some initial content
+            $('#data').html("Welcome to my project!");
+        }
+
+        function loadGitHubContent() {
+            // Fetch content from the GitHub link using AJAX
+            $.ajax({
+                url: 'https://f28wp.github.io/material/tasks/Task%2008%20-%20AJAX%20&%20JSON.html',
+                success: function (data) {
+                    console.log(data);
+                    // Replace the content of the 'data' element with the retrieved data
+                    $('#data').html(data);
+                }
+            });
+        }
     </script>
-
-<h1>HTML DOM Events</h1>
-<h2>The onclick Event</h2>
-
-<p>How to assign an "onclick" event to a p element:</p>
-
-<p id="demo" onclick="myFunction()">Click me.</p>
-
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
-}
-</script>
-
-
-    <span id="data"></span>   
-<head>
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-
-     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
 </head>
 <body>
-    Here is one mermaid diagram:
-    <pre class="mermaid">
-            graph TD 
-            A[Client] --> B[Load Balancer] 
-            B --> C[Server1] 
-            B --> D[Server2]
-    </pre>
+    <h1>HTML DOM Events</h1>
+    <h2>The onclick Event</h2>
+    <p>How to assign an "onclick" event to a p element:</p>
+    <p id="demo">Click me.</p>
+    <span id="data"></span>
 
-    And here is another:
-    <pre class="mermaid">
-            graph TD 
-            A[Client] -->|tcp_123| B
-            B(Load Balancer) 
-            B -->|tcp_456| C[Server1] 
-            B -->|tcp_456| D[Server2]
-    </pre>
-    <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true });
-    </script>
-
-    <script type="text/javascript" id="cookiebanner"
-    src="https://cdn.jsdelivr.net/gh/dobarkod/cookie-banner@1.2.2/dist/cookiebanner.min.js"
-    data-height="20px" data-position="top"
-    data-message="We use cookies to improve your browsing experience.">
-    </script>
-
-    <div id="map" style="width: 600px; height: 400px;"></div>
-    <script>
-        // Initialize the map
-        var myMap = L.map('map').setView([55.91124725341797,-3.3181469440460205], 97); // [latitude, longitude], zoom level
-    
-        // Add a base tile layer (you can choose a different tile provider)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(myMap);
-    
-        // Add a marker
-        var marker = L.marker([55.91124725341797,-3.3181469440460205]).addTo(myMap)
-            .bindPopup('This is a marker!')
-            .openPopup();
-    </script>
+    <!-- GitHub link -->
+    <p><a href="https://github.com/f28wp/material/tasks/Task%2008%20-%20AJAX%20&%20JSON.html" target="_blank">GitHub Link</a></p>
 </body>
 </html>
