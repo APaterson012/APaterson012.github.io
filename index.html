@@ -10,10 +10,17 @@
             // Initialize the page content
             loadInitialContent();
 
-            // Attach a click event handler to the "Click me" button
+            // Attach click event handlers to the "Click me," "Map," and "Mermaid" links
             $('#demo').click(function () {
-                // Load GitHub content into the current page
                 loadGitHubContent();
+            });
+
+            $('#mapLink').click(function () {
+                loadMapContent();
+            });
+
+            $('#mermaidLink').click(function () {
+                loadMermaidContent();
             });
         });
 
@@ -33,6 +40,16 @@
                 }
             });
         }
+
+        function loadMapContent() {
+            // Fetch content for the Map section (you can replace with your own map content)
+            $('#data').html("This is the Map section content.");
+        }
+
+        function loadMermaidContent() {
+            // Fetch content for the Mermaid section (you can replace with your own mermaid content)
+            $('#data').html("This is the Mermaid section content.");
+        }
     </script>
 </head>
 <body>
@@ -41,6 +58,12 @@
     <p>How to assign an "onclick" event to a p element:</p>
     <p id="demo">Click me.</p>
     <span id="data"></span>
+
+    <!-- Links to the Map and Mermaid sections -->
+    <ul>
+        <li><a id="mapLink" href="#">Map Section</a></li>
+        <li><a id="mermaidLink" href="#">Mermaid Section</a></li>
+    </ul>
 
     <!-- GitHub link -->
     <p><a href="https://github.com/f28wp/material/tasks/Task%2008%20-%20AJAX%20&%20JSON.html" target="_blank">GitHub Link</a></p>
