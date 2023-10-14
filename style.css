@@ -25,3 +25,17 @@ h1{
 .navbar li{
     float: left;
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.spotify-embed {
+    position: relative;
+    margin-top: 60px; /* Adjust the margin value to create space below the navigation bar */
+    z-index: 1;
+}
