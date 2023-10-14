@@ -60,6 +60,8 @@ h4{
     z-index: 999;
     display: none;
     align-items: flex-end;
+    justify-content: center; 
+    align-items: center;
 }
 
 .cookie-consent-modal.active{
