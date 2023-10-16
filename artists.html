@@ -24,28 +24,6 @@
         <main>
             <h3>Artists</h3>
 
-            <h5>John Mayer</h5>
-
-        <script src="https://code.jquery.com/jquery.js"></script>
-        <script>
-         $(document).ready(function(){
-             // when ready, grab the html 
-             getContents();
-         });
-         function getContents(){
-             $.ajax({
-                 url: "https://www.johnmayer.com/",
-                 success: function(data) {
-                    console.log(data);
-                     $('#data').html( data );
-                 }
-             });
-         }
-        </script>
-
-
-        <span id="data"></span>
-
         </main>
     </body>
     </html>
