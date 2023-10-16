@@ -1,90 +1,158 @@
 body{
-    background-color: hsl(0, 0%, 30%);
-    font-family: Arial, Helvetica, sans-serif;
-}
-h1{
-    text-align: center;
-    background-color: hsl(0, 0%, 25%) ;
-    top: 0;
-    left: 0;
-    color: white;
-    padding: 0px;
-    margin: 0px ;
-    overflow: hidden;
-}
-h3{
-    color: white;
-}
-h2{
-    color: black;
-}
-h4{
-    color: white;
-}
-.navbar ul{
-    list-style-type: none;
-    background-color: hsl(0, 0%, 25%) ;
-    padding: 0px;
-    margin: 0px ;   
-    overflow: hidden;
-}
-.navbar a{
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    display: block;
-    text-align: center;
-}
-.navbar a:hover{
-    background-color: hsl(0, 0%, 10%);
-}
-.navbar li{
-    float: left;
+  background-color: hsl(0, 0%, 30%);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+h1{
+  text-align: center;
+  background-color: hsl(0, 0%, 25%) ;
+  top: 0;
+  left: 0;
+  color: white;
+  padding: 0px;
+  margin: 0px ;
+  overflow: hidden;
+}
+
+h3{
+  color: white;
+}
+
+h2{
+  color: black;
+}
+
+h4{
+  color: white;
+}
+
+.navbar ul{
+  list-style-type: none;
+  background-color: hsl(0, 0%, 25%) ;
+  padding: 0px;
+  margin: 0px ;   
+  overflow: hidden;
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: block;
+  text-align: center;
+}
+
+.navbar a:hover{
+  background-color: hsl(0, 0%, 10%);
+}
+
+.navbar li{
+  float: left;
+}
 
 .cookie-consent-modal{
-    height: 100vh;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    display: none;
-    align-items: flex-end;
-    justify-content: center; 
-    align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+  align-items: flex-end;
+  justify-content: center; 
+  align-items: center;
 }
+
 .cookie-consent-modal.active{
-    display: flex;
+  display: flex;
 }
+
 .content{
-    background-color: #fff;
-    padding: 5vw 3vw;
-    border-radius: 10px;
+  background-color: #fff;
+  padding: 5vw 3vw;
+  border-radius: 10px;
 }
+
 .btns{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 2em;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2em;
 }
+
 .btn{
-    border: none;
-    outline: none;
-    padding: .8em 1.5em;
-    width: 100px;
-    margin-right: 1em;
-    border-radius: 3px;
-    text-transform: uppercase;
+  border: none;
+  outline: none;
+  padding: .8em 1.5em;
+  width: 100px;
+  margin-right: 1em;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
+
 .btn.accept{
-    background-color: green;
-    color: #fff;
+  background-color: green;
+  color: #fff;
 }
+
 .btn.cancel{
-    background-color: red;
-    color: #fff;
+  background-color: red;
+  color: #fff;
 }
 
 
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
