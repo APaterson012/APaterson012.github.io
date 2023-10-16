@@ -18,14 +18,11 @@ setTimeout(function (){
 }, 2000)
 
 
-$(document).ready(function() {
-    // Hide the widget container initially
-    $("#widgetContainer").hide();
-
+document.addEventListener("DOMContentLoaded", function() {
     // Add a click event handler to the "Show Widget" button
-    $("#showWidgetButton").click(function() {
+    document.getElementById("showWidgetButton").addEventListener("click", function() {
         // Show the widget container when the button is clicked
-        $("#widgetContainer").show();
+        document.getElementById("widgetContainer").style.display = "block";
 
         // Initialize the widget after it's shown
         if (typeof wtmWidgets !== "undefined") {
