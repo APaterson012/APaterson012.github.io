@@ -108,7 +108,7 @@ input[type=submit]:hover {
 
 .cookie-consent-modal{
   height: 100vh;
-  width: 100%;
+  width: 80%;
   background-color: rgba(0,0,0,0.5);
   position: fixed;
   top: 0;
