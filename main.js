@@ -17,16 +17,3 @@ setTimeout(function (){
     }
 }, 2000)
 
-
-document.addEventListener("DOMContentLoaded", function() {
-    // Add a click event handler to the "Show Widget" button
-    document.getElementById("showWidgetButton").addEventListener("click", function() {
-        // Show the widget container when the button is clicked
-        document.getElementById("widgetContainer").style.display = "block";
-
-        // Initialize the widget after it's shown
-        if (typeof wtmWidgets !== "undefined") {
-            wtmWidgets.init();
-        }
-    });
-});
