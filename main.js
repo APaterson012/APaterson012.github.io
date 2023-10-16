@@ -16,3 +16,16 @@ setTimeout(function (){
         cookieModal.classList.add("active")
     }
 }, 2000)
+
+
+// script.js
+$(document).ready(function() {
+    // Hide the widget container initially
+    $("#widgetContainer").hide();
+
+    // Add a click event handler to the "Show Widget" button
+    $("#showWidgetButton").click(function() {
+        // Show the widget container when the button is clicked
+        $("#widgetContainer").show();
+    });
+});
