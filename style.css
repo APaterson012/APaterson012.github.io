@@ -96,9 +96,11 @@ img {
 }
 /* Slideshow container */
 .slideshow-container {
-max-width: 80%;
+max-width: 100%;
+height: 200px;
 position: relative;
 margin: auto;
+padding: 10px;
 }
 /* Next & previous buttons */
 .prev, .next {
