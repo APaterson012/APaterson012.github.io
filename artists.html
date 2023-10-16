@@ -24,6 +24,30 @@
         <main>
             <h3>Artists</h3>
 
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script> 
+        <script> 
+            $(document).ready(function(){ 
+                $("button").click(function(){ 
+                    $("#divContent").load("https://en.wikipedia.org/wiki/John_Mayer"); 
+                }); 
+            }); 
+        </script>   
+        <style> 
+            body { 
+                text-align: center; 
+            } 
+            #divContent { 
+                font-size: 40px; 
+                font-weight: bold; 
+                color: green; 
+            } 
+        </style> 
+
+
+        <div id="divContent"> 
+            Default Content
+        </div> 
+
         </main>
     </body>
     </html>
