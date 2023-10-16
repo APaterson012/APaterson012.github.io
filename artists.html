@@ -25,48 +25,60 @@
         <main>
             <h3>Tours</h3>
 
-            <button id="showWidgetButton">John Mayer</button>
-            <button id="showHozierWidgetButton">Hozier</button>
+            <button id="showJohnMayerButton">John Mayer</button>
+                <div id="widgetContainer">
+                    <div w-type="event-discovery" w-tmapikey="pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz" 
+                    w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="simple" w-colorscheme="light" 
+                    w-width="620" w-height="286" w-size="25" w-border="0" w-borderradius="4" w-radius="100" 
+                    w-period="year" w-layout="horizontal" w-attractionid="K8vZ9171SN7" w-promoterid="" w-venueid="KovZ9177Sq0" 
+                    w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="dateAscending" 
+                    w-id="id_pcgnp" w-source="ticketmaster" w-branding="Ticketmaster" w-latlong="34.0390107,-118.2672801"></div>
+                </div>
+                <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
 
+            
+        
+                <script>
+                    $(document).ready(function() {
+                        // Hide the widget container initially
+                        $("#widgetContainer").hide();
+                
+                        // Add a click event handler to the "Show Widget" button
+                        $("#showJohnMayerButton").click(function() {
+                            // Toggle the visibility of the widget container when the button is clicked
+                            $("#widgetContainer").toggle();
+                        });
+                    });
+                </script>
+
+            <button id="showHozierButton">Hozier</button>
             <div id="widgetContainer">
-                <!-- John Mayer widget -->
-                <div id="johnMayerWidget" style="display: none;">
-                    <div w-type="event-discovery" w-tmapikey="pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" 
-                    w-theme="simple" w-colorscheme="light" w-width="620" w-height="286" w-size="25" w-border="0" w-borderradius="4" w-radius="100" 
-                    w-period="year" w-layout="horizontal" w-attractionid="K8vZ9171SN7" w-promoterid="" w-venueid="KovZ9177Sq0" w-affiliateid="" 
-                    w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="dateAscending" w-id="id_pcgnp" w-source="ticketmaster" 
-                    w-branding="Ticketmaster" w-latlong="34.0390107,-118.2672801"></div>
-                </div>
-
-                <!-- Hozier widget -->
-                <div id="hozierWidget" style="display: none;">
-                    <div w-type="event-discovery" w-tmapikey="pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" 
-                    w-theme="simple" w-colorscheme="light" w-width="620" w-height="286" w-size="25" w-border="0" w-borderradius="4" w-radius="100" 
-                    w-period="year" w-layout="horizontal" w-attractionid="K8vZ917o-E7" w-promoterid="" w-venueid="KovZ9177Sq0" w-affiliateid="" 
-                    w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="dateAscending" w-id="id_pcgnp" w-source="ticketmaster" 
-                    w-branding="Ticketmaster" w-latlong="34.0390107,-118.2672801"></div>
-                </div>
+                <div w-type="event-discovery" w-tmapikey="pLOeuGq2JL05uEGrZG7DuGWu6sh2OnMz" 
+                w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="simple" w-colorscheme="light" 
+                w-width="620" w-height="286" w-size="25" w-border="0" w-borderradius="4" w-radius="100" 
+                w-period="year" w-layout="horizontal" w-attractionid="K8vZ9171SN7" w-promoterid="" w-venueid="KovZ9177Sq0" 
+                w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="dateAscending" 
+                w-id="id_pcgnp" w-source="ticketmaster" w-branding="Ticketmaster" w-latlong="34.0390107,-118.2672801"></div>
             </div>
-
             <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
+
+
+
             <script>
                 $(document).ready(function() {
                     // Hide the widget container initially
                     $("#widgetContainer").hide();
 
-                    // Add a click event handler for the John Mayer widget button
-                    $("#showWidgetButton").click(function() {
-                        // Toggle the visibility of the John Mayer widget container
-                        $("#johnMayerWidget").toggle();
-                    });
-
-                    // Add a click event handler for the Hozier widget button
-                    $("#showHozierWidgetButton").click(function() {
-                        // Toggle the visibility of the Hozier widget container
-                        $("#hozierWidget").toggle();
+                    // Add a click event handler to the "Show Widget" button
+                    $("#showHozierButton").click(function() {
+                        // Toggle the visibility of the widget container when the button is clicked
+                        $("#widgetContainer").toggle();
                     });
                 });
             </script>
+
+
+                
         </main>
-</body>
-</html>
+    </body>
+    </html>
