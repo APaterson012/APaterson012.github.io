@@ -64,21 +64,22 @@ function loadRSSFeed() {
 loadRSSFeed();
 
 
-let slideIndex = 1;
+let slideIndex = 1; // Initialize slideIndex
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides((slideIndex += n));
 }
 
 function currentSlide(n) {
-    slideIndex = n; // Update slideIndex directly
-    showSlides(slideIndex);
+  slideIndex = n; // Update slideIndex directly
+  showSlides(slideIndex);
 }
+
 
 function showSlides(n) {
   let i;
-  let slides = document.getElementsByClassName("mySlides");
+  let slides = document.getElementsByClassName("mySlides fade");
   let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
