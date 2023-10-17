@@ -64,33 +64,29 @@ function loadRSSFeed() {
 loadRSSFeed();
 
 
-// Define the slide index variable
 let slideIndex = 1;
+showSlides(slideIndex);
 
-// Function to change the slide
-function changeSlide(n) {
-    showSlide(slideIndex += n);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-// Function to show a specific slide
-function showSlide(n) {
-    const slides = document.getElementsByClassName("slideshow-slide");
-
-    if (n > slides.length) {
-        slideIndex = 1;
-    }
-    if (n < 1) {
-        slideIndex = slides.length;
-    }
-
-    // Hide all slides
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    // Show the current slide
-    slides[slideIndex - 1].style.display = "block";
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
 
-// Call the function to initialize the slideshow
-showSlide(slideIndex);
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
