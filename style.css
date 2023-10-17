@@ -121,7 +121,6 @@ input[type=submit]:hover {
   align-items: flex-end;
   justify-content: center; 
   align-items: center;
-  text-align: center;
 }
 
 .cookie-consent-modal.active{
