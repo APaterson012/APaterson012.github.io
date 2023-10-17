@@ -17,27 +17,32 @@ setTimeout(function (){
     }
 }, 2000)
 
+// URL of the Rolling Stone RSS feed converted to JSON using rss2json
+const rssFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.rollingstone.com%2Fmusic%2Ffeed%2F';
+
 // Function to load and display the RSS feed
 function loadRSSFeed() {
-    fetch('rss-proxy.php') // Change to the path of your server-side script
-        .then(response => response.text())
+    fetch(rssFeedUrl)
+        .then(response => response.json())
         .then(data => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(data, 'text/xml');
-            const items = xmlDoc.querySelectorAll('item');
+            if (data.status === 'ok') {
+                const items = data.items;
 
-            const feedContainer = document.getElementById('rss-feed');
+                const feedContainer = document.getElementById('rss-feed');
 
-            items.forEach(item => {
-                const title = item.querySelector('title').textContent;
-                const link = item.querySelector('link').textContent;
+                items.forEach(item => {
+                    const title = item.title;
+                    const link = item.link;
 
-                const itemElement = document.createElement('a');
-                itemElement.href = link;
-                itemElement.textContent = title;
+                    const itemElement = document.createElement('a');
+                    itemElement.href = link;
+                    itemElement.textContent = title;
 
-                feedContainer.appendChild(itemElement);
-            });
+                    feedContainer.appendChild(itemElement);
+                });
+            } else {
+                console.error('Error loading RSS feed:', data.message);
+            }
         })
         .catch(error => {
             console.error('Error loading RSS feed:', error);
@@ -46,4 +51,5 @@ function loadRSSFeed() {
 
 // Call the function to load the RSS feed
 loadRSSFeed();
+
 
