@@ -161,7 +161,7 @@ input[type=submit]:hover {
 .feed-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between; /* Create two columns */
   background-color: #000;
   border-radius: 10px;
   padding: 20px;
@@ -169,7 +169,7 @@ input[type=submit]:hover {
 }
 
 .rss-item {
-  flex: 0 1 calc(33.33% - 20px);
+  flex: 0 1 calc(49% - 20px); /* Two columns with a small gap between them */
   margin: 10px;
   padding: 15px;
   border: 1px solid #fff;
@@ -198,7 +198,8 @@ a {
 /* Responsive layout */
 @media screen and (max-width: 768px) {
   .rss-item {
-      flex: 0 1 calc(50% - 20px);
+      flex: 0 1 calc(100% - 20px); /* Full-width on smaller screens */
   }
 }
+
 
