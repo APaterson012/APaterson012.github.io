@@ -17,12 +17,9 @@ setTimeout(function (){
     }
 }, 2000)
 
-// URL of the RSS feed
-const rssFeedUrl = 'https://www.factmag.com/category/magazine/feed';
-
-// Function to fetch and display the RSS feed
+// Function to load and display the RSS feed
 function loadRSSFeed() {
-    fetch(rssFeedUrl)
+    fetch('rss-proxy.php') // Change to the path of your server-side script
         .then(response => response.text())
         .then(data => {
             const parser = new DOMParser();
@@ -49,3 +46,4 @@ function loadRSSFeed() {
 
 // Call the function to load the RSS feed
 loadRSSFeed();
+
