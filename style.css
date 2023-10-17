@@ -150,13 +150,13 @@ input[type=submit]:hover {
 }
 
 .btn.accept{
-  background-color: green;
+  background-color: black;
   color: #fff;
 }
 
 .btn.cancel{
-  background-color: red;
-  color: #fff;
+  background-color: rgb(202, 202, 202);
+  color: rgb(130, 130, 130);
 }
 
 
