@@ -20,7 +20,7 @@ setTimeout(function (){
 // URL of the Rolling Stone RSS feed converted to JSON using rss2json
 const rssFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.rollingstone.com%2Fmusic%2Ffeed%2F';
 
-// Function to load and display the RSS feed with images
+// Function to load and display the RSS feed with text content (titles and links)
 function loadRSSFeed() {
     fetch(rssFeedUrl)
         .then(response => response.json())
@@ -33,28 +33,14 @@ function loadRSSFeed() {
                 items.forEach(item => {
                     const title = item.title;
                     const link = item.link;
-                    const imageUrl = item.enclosure.link; // Access the image URL
-
-                    // Create a div to hold the image and title
-                    const itemDiv = document.createElement('div');
-                    itemDiv.className = 'rss-item';
-
-                    // Create an image element
-                    const imageElement = document.createElement('img');
-                    imageElement.src = imageUrl;
-                    imageElement.alt = title;
 
                     // Create a link element for the title
                     const linkElement = document.createElement('a');
                     linkElement.href = link;
                     linkElement.textContent = title;
 
-                    // Append the image and link to the item div
-                    itemDiv.appendChild(imageElement);
-                    itemDiv.appendChild(linkElement);
-
-                    // Append the item div to the feed container
-                    feedContainer.appendChild(itemDiv);
+                    // Append the link to the feed container
+                    feedContainer.appendChild(linkElement);
                 });
             } else {
                 console.error('Error loading RSS feed:', data.message);
@@ -65,7 +51,5 @@ function loadRSSFeed() {
         });
 }
 
-// Call the function to load the RSS feed with images
+// Call the function to load the RSS feed with text content
 loadRSSFeed();
-
-
