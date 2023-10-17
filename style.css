@@ -120,7 +120,6 @@ input[type=submit]:hover {
   display: none;
   align-items: flex-end;
   justify-content: center; 
-  align-items: center;
 }
 
 .cookie-consent-modal.active{
