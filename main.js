@@ -17,6 +17,8 @@ setTimeout(function (){
     }
 }, 2000)
 
+
+
 // URL of the Rolling Stone RSS feed converted to JSON using rss2json
 const rssFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.rollingstone.com%2Fmusic%2Ffeed%2F';
 
@@ -60,3 +62,28 @@ function loadRSSFeed() {
 
 // Call the function to load the RSS feed with individual boxes
 loadRSSFeed();
+
+
+let slideIndex = 1;
+showSlide(slideIndex);
+
+function changeSlide(n) {
+    showSlide(slideIndex += n);
+}
+
+function showSlide(n) {
+    const slides = document.getElementsByClassName("slideshow-slide");
+
+    if (n > slides.length) {
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        slideIndex = slides.length;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+}
