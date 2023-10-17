@@ -64,13 +64,15 @@ function loadRSSFeed() {
 loadRSSFeed();
 
 
+// Define the slide index variable
 let slideIndex = 1;
-showSlide(slideIndex);
 
+// Function to change the slide
 function changeSlide(n) {
     showSlide(slideIndex += n);
 }
 
+// Function to show a specific slide
 function showSlide(n) {
     const slides = document.getElementsByClassName("slideshow-slide");
 
@@ -81,9 +83,14 @@ function showSlide(n) {
         slideIndex = slides.length;
     }
 
+    // Hide all slides
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
 
+    // Show the current slide
     slides[slideIndex - 1].style.display = "block";
 }
+
+// Call the function to initialize the slideshow
+showSlide(slideIndex);
