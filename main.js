@@ -72,7 +72,8 @@ function plusSlides(n) {
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    slideIndex = n; // Update slideIndex directly
+    showSlides(slideIndex);
 }
 
 function showSlides(n) {
