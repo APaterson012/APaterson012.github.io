@@ -14,15 +14,11 @@ h1{
   overflow: hidden;
 }
 
-h3{
-  color: white;
-}
-
 h2{
   color: black;
 }
 
-h4{
+p, h3, h4{
   color: white;
 }
 
