@@ -33,25 +33,15 @@ function loadRSSFeed() {
                 items.forEach(item => {
                     const title = item.title;
                     const link = item.link;
-                    const imageUrl = item.enclosure.link; // Access the image URL
 
-                    // Create a div to hold the image and title
+                    // Create a div to hold the title
                     const itemDiv = document.createElement('div');
                     itemDiv.className = 'rss-item';
-
-                    // Create an image element
-                    const imageElement = document.createElement('img');
-                    imageElement.src = imageUrl;
-                    imageElement.alt = title;
 
                     // Create a link element for the title
                     const linkElement = document.createElement('a');
                     linkElement.href = link;
                     linkElement.textContent = title;
-
-                    // Append the image and link to the item div
-                    itemDiv.appendChild(imageElement);
-                    itemDiv.appendChild(linkElement);
 
                     // Append the item div to the feed container
                     feedContainer.appendChild(itemDiv);
@@ -65,5 +55,5 @@ function loadRSSFeed() {
         });
 }
 
-// Call the function to load the RSS feed with images
+// Call the function to load the RSS feed
 loadRSSFeed();
