@@ -203,7 +203,7 @@ img {vertical-align: middle;}
   width: 45%;
   position: relative;
   margin: auto;
-  float: right  ;
+  text-align: center  ;
 }
 
 /* Next & previous buttons */
@@ -285,3 +285,7 @@ img {vertical-align: middle;}
   .prev, .next,.text {font-size: 11px}
 }
 
+.mermaid{
+  float: left;
+  width: 45%;
+}
