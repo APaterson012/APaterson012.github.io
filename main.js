@@ -20,7 +20,7 @@ setTimeout(function (){
 // URL of the Rolling Stone RSS feed converted to JSON using rss2json
 const rssFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.rollingstone.com%2Fmusic%2Ffeed%2F';
 
-// Function to load and display the RSS feed in clickable black boxes
+// Function to load and display the RSS feed with individual boxes
 function loadRSSFeed() {
     fetch(rssFeedUrl)
         .then(response => response.json())
@@ -34,7 +34,7 @@ function loadRSSFeed() {
                     const title = item.title;
                     const link = item.link;
 
-                    // Create a div for the black box
+                    // Create a div for each individual box
                     const itemDiv = document.createElement('div');
                     itemDiv.className = 'rss-item';
 
@@ -43,10 +43,10 @@ function loadRSSFeed() {
                     linkElement.href = link;
                     linkElement.textContent = title;
 
-                    // Append the link to the black box
+                    // Append the link to the individual box
                     itemDiv.appendChild(linkElement);
 
-                    // Add the black box to the feed container
+                    // Add the individual box to the feed container
                     feedContainer.appendChild(itemDiv);
                 });
             } else {
@@ -58,5 +58,5 @@ function loadRSSFeed() {
         });
 }
 
-// Call the function to load the RSS feed in clickable black boxes
+// Call the function to load the RSS feed with individual boxes
 loadRSSFeed();
