@@ -17,3 +17,35 @@ setTimeout(function (){
     }
 }, 2000)
 
+// URL of the RSS feed
+const rssFeedUrl = 'https://www.factmag.com/category/magazine/feed';
+
+// Function to fetch and display the RSS feed
+function loadRSSFeed() {
+    fetch(rssFeedUrl)
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(data, 'text/xml');
+            const items = xmlDoc.querySelectorAll('item');
+
+            const feedContainer = document.getElementById('rss-feed');
+
+            items.forEach(item => {
+                const title = item.querySelector('title').textContent;
+                const link = item.querySelector('link').textContent;
+
+                const itemElement = document.createElement('a');
+                itemElement.href = link;
+                itemElement.textContent = title;
+
+                feedContainer.appendChild(itemElement);
+            });
+        })
+        .catch(error => {
+            console.error('Error loading RSS feed:', error);
+        });
+}
+
+// Call the function to load the RSS feed
+loadRSSFeed();
