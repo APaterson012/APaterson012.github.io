@@ -37,21 +37,40 @@
                 <pre class="mermaid">
                     graph TB
                     subgraph "1973 Original Lineup"
-                    A[Gene Simmons] -->|1973| B[Paul Stanley]
+                    A[Gene Simmons]
+                    B[Paul Stanley]
                     C[Ace Frehley]
                     D[Peter Criss]
                     end
-                    subgraph "1982 Lineup Change"
-                    E[Vinnie Vincent]
-                    F[Eric Carr] -->|1980-1991| G[Eric Singer]
+                    subgraph "1980 Lineup Change"
+                    A[Gene Simmons]
+                    B[Paul Stanley]
+                    C[Ace Frehley]
+                    D[Peter Criss]--> E[Eric Carr]
                     end
-                    subgraph "1996 Lineup Change"
-                    H[Bruce Kulick]
-                    I[Eric Singer]
+                    subgraph "1983 Lineup Change"
+                    A[Gene Simmons]
+                    B[Paul Stanley]
+                    C[Ace Frehley] --> F[Vinnie Vincent]
+                    E[Eric Carr]
                     end
-                    subgraph "2002 Lineup Change"
-                    J[Tommy Thayer]
-                    K[Eric Singer]
+                    subgraph "1984 Lineup Change"
+                    A[Gene Simmons]
+                    B[Paul Stanley]
+                    F[Vinnie Vincent] --> G[Mark St. John]
+                    E[Eric Carr]
+                    end
+                    subgraph "1985 Lineup Change"
+                    A[Gene Simmons]
+                    B[Paul Stanley]
+                    G[Mark St. John]--> H[Bruce Kulick]
+                    E[Eric Carr]
+                    end
+                    subgraph "2002-Present Lineup"
+                    A[Gene Simmons]
+                    B[Paul Stanley]
+                    H[Bruce Kulick]--> I[Tommy Tahyer]
+                    E[Eric Carr]
                     end
                 </pre>
             
