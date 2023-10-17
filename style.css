@@ -162,7 +162,7 @@ input[type=submit]:hover {
 .feed-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #000;
   border-radius: 10px;
   padding: 20px;
@@ -170,7 +170,7 @@ input[type=submit]:hover {
 }
 
 .rss-item {
-  flex: 0 1 calc(33.33% - 20px);
+  flex: 0 1 calc(49% - 20px);
   margin: 10px;
   padding: 15px;
   border: 1px solid #fff;
@@ -178,17 +178,12 @@ input[type=submit]:hover {
   text-align: center;
   background-color: #000;
   transition: background-color 0.2s;
+  cursor: pointer;
 }
 
 .rss-item:hover {
   background-color: #fff;
   color: #000;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
 }
 
 a {
@@ -199,6 +194,6 @@ a {
 /* Responsive layout */
 @media screen and (max-width: 768px) {
   .rss-item {
-      flex: 0 1 calc(50% - 20px);
+      flex: 0 1 calc(100% - 20px);
   }
 }
