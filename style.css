@@ -18,12 +18,16 @@ h2{
   color: black;
 }
 
-p, h3, h4{
+h3, h4, h6{
   color: white;
 }
 
 h5{
   color: rgb(139, 0, 139);
+}
+
+p {
+  color: #000;
 }
 
 .navbar ul{
